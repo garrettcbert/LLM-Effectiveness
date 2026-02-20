@@ -9,7 +9,7 @@ def collect_llm_excerpts(prompt):
     )
     excerpt = response.text
 
-    with open('llm_excerpts.md', 'w') as f:
+    with open('excerpts/llm_excerpts.md', 'w') as f:
         f.write(excerpt)
 
     return excerpt

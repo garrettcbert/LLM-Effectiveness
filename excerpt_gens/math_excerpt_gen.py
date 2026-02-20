@@ -17,7 +17,7 @@ def collect_math_excerpts(num = 20):
         excerpts.append(excerpt)
         time.sleep(1)  # To avoid hitting the API rate limit
     
-    with open('math_gen_output.md', 'w') as f:
+    with open('excerpts/math_gen_output.md', 'w') as f:
         for excerpt in excerpts:
             f.write(excerpt + "\n")  # Separate excerpts by two newlines
 
