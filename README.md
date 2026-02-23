@@ -16,7 +16,8 @@ Automate the mathematical similarities between the generated chapter, one of Chi
 
 <b>Prompt: <b>“You are Ted Chiang writing the secret chapter of Division By Zero. The chapter should be after Claire had discovered that 1=2. She is trying to rewrite the proof for the quadratic formula. Make sure it fits thematically in the story, and maintain Chiang's grammar and syntax style.”
 ### Math Behind This
-```{python}
+
+```python
    def get_pos_string(self, nlp, text):
        doc = nlp(text)
        return " ".join([token.pos_ for token in doc])
@@ -50,7 +51,6 @@ get_cosine_similarity - converts the string of parts-of-speech tags into a vecto
 | PRON+VERB | 1     |
 | VERB+ADJ  | 0     |
 | PRON+ADJ  | 0     |
-
 
 
 This would include all possible parts-of-speech as well as all possible combinations of parts-of-speech. 
