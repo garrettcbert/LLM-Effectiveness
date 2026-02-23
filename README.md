@@ -56,7 +56,7 @@ get_cosine_similarity - converts the string of parts-of-speech tags into a vecto
 This would include all possible parts-of-speech as well as all possible combinations of parts-of-speech. 
 
 Those vectors are then combined to form the full matrix. Each row of the matrix is then compared using the cosine similarity formula: 
-$A * B||A|| x ||B||$
+![Cosine Similarity Formula](output/cosine_similarity_equation.png)
 This just calculates how much the vectors overlap and adjusts for the lengths.
 
 Results:
