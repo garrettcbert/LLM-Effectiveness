@@ -1,7 +1,7 @@
 from google import genai
 
 def collect_llm_excerpts(prompt):
-    client = genai.Client(api_key = 'AIzaSyBeL08dq579faCI_dRvJ0h-9Gks9GRwA7Q')
+    client = genai.Client(api_key = key)
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",
