@@ -1,0 +1,9 @@
+pandas
+seaborn
+matplotlib
+numpy
+spacy
+scikit-learn
+google-genai
+arxiv
+time
