@@ -40,6 +40,7 @@ get_pos_string - converts each word into its part-of-speech tag. For example:
 “I have a cat” -> PRON VERB DET NOUN
 
 get_cosine_similarity - converts the string of parts-of-speech tags into a vector that counts how many times each pos 	appears, as well as how many times each pos pair appears. For example, the resulting vector for the above sentence would look like this:
+<div align = 'center'>
 
 | POS Tag   | Count |
 |-----------|-------|
@@ -52,35 +53,26 @@ get_cosine_similarity - converts the string of parts-of-speech tags into a vecto
 | VERB+ADJ  | 0     |
 | PRON+ADJ  | 0     |
 
+</div>
 
 This would include all possible parts-of-speech as well as all possible combinations of parts-of-speech. 
 
 Those vectors are then combined to form the full matrix. Each row of the matrix is then compared using the cosine similarity formula: 
-![Cosine Similarity Formula](output/cosine_similarity_equation.png){width=200px, height=100px}
-This just calculates how much the vectors overlap and adjusts for the lengths.
 
-Results:
+<div align = 'center'>
+  <img src='output/cosine_similarity_equation.png' width='200'>
+</div>
 
+This calculates how much the vectors overlap and adjusts for the lengths.
 
+### My Results:
 
+|                 | Gemini Output | Math Gen Output | Raw Chiang Text |
+|-----------------|---------------|-----------------|-----------------|
+| Gemini Output   | 1.000         | 0.850           | 0.884           |
+| Math Gen Output | 0.850         | 1.000           | 0.788           |
+| Raw Chiang Text | 0.884         | 0.788           | 1.000           |
 
-
-
-
-Gemini Output
-Math Gen Output
-Raw Chiang Text
-Gemini Output
-1
-0.754973
-0.847864
-Math Gen Output
-0.754973
-1
-0.779017
-Raw Chiang Text
-0.847864
-0.779017
-1
-
-
+<div align = 'center'>
+  <img src = 'output/similarity_matrix_heatmap.png' width = 500>
+</div>

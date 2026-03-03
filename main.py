@@ -1,9 +1,9 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from get_similarity import PosSimilarity
-import excerpt_gens.math_excerpt_gen as math_excerpt_gen
-import excerpt_gens.llm_excerpt_gen as llm_excerpt_gen
+from src.get_similarity import PosSimilarity
+import src.math_excerpt_gen as math_excerpt_gen
+import src.llm_excerpt_gen as llm_excerpt_gen
 
 desired_prompt = """
     You are Ted Chiang writing the secret chapter of Division By Zero. The chapter should be after Claire had discovered \\
