@@ -1,4 +1,9 @@
 from google import genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+key = os.getenv('GOOGLE_API_KEY')
 
 def collect_llm_excerpts(prompt):
     client = genai.Client(api_key = key)
