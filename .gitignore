@@ -1,1 +1,10 @@
 .env
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+output/
+excerpts/llm_excerpts.md
+excerpts/math_gen_output.md
+venv/
+.venv/

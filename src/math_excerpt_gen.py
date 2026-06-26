@@ -1,8 +1,9 @@
 import arxiv
-import time
+from pathlib import Path
 
-def collect_math_excerpts(num = 20):
+EXCERPTS_DIR = Path(__file__).parent.parent / "excerpts"
 
+def collect_math_excerpts(num=20):
     client = arxiv.Client(page_size=100, delay_seconds=1)
 
     search = arxiv.Search(
@@ -11,14 +12,10 @@ def collect_math_excerpts(num = 20):
         sort_by=arxiv.SortCriterion.SubmittedDate
     )
 
-    excerpts = []
-    for result in client.results(search):
-        excerpt = result.summary[:500]  # Get the first 200 characters of the summary
-        excerpts.append(excerpt)
-        time.sleep(1)  # To avoid hitting the API rate limit
-    
-    with open('excerpts/math_gen_output.md', 'w') as f:
+    excerpts = [result.summary[:500] for result in client.results(search)]
+
+    with open(EXCERPTS_DIR / "math_gen_output.md", 'w') as f:
         for excerpt in excerpts:
-            f.write(excerpt + "\n")  # Separate excerpts by two newlines
+            f.write(excerpt + "\n")
 
     return " ".join(excerpts)
