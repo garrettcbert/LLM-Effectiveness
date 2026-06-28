@@ -51,7 +51,7 @@ This includes all possible parts-of-speech as well as all possible combinations 
 Those vectors are then compared using the cosine similarity formula:
 
 <div align="center">
-  <img src="output/cosine_similarity_equation.png" width="200">
+  <img src="docs/cosine_similarity_equation.png" width="200">
 </div>
 
 This calculates how much the vectors overlap and adjusts for the lengths.
@@ -83,7 +83,3 @@ python src/main.py
 | **Gemini Output** | 1.0 | 0.81 | 0.88 |
 | **Math Gen Output** | 0.81 | 1.0 | 0.79 |
 | **Raw Chiang Text** | 0.88 | 0.79 | 1.0 |
-
-<div align="center">
-  <img src="output/similarity_matrix_heatmap.png" width="500">
-</div>
