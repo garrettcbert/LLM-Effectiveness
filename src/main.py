@@ -2,11 +2,11 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
-from src.get_similarity import PosSimilarity
-import src.math_excerpt_gen as math_excerpt_gen
-import src.llm_excerpt_gen as llm_excerpt_gen
+from get_similarity import PosSimilarity
+import math_excerpt_gen as math_excerpt_gen
+import llm_excerpt_gen as llm_excerpt_gen
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 EXCERPTS_DIR = ROOT / "excerpts"
 OUTPUT_DIR = ROOT / "output"
 
@@ -23,12 +23,14 @@ if llm_cache.exists():
     gemini_excerpt = llm_cache.read_text()
     print("Using cached Gemini excerpt.")
 else:
+    print("Generating LLM output...")
     gemini_excerpt = llm_excerpt_gen.collect_llm_excerpts(desired_prompt)
 
 if math_cache.exists():
     math_gen_excerpt = math_cache.read_text()
     print("Using cached math excerpts.")
 else:
+    print("Collecting Math excerpts...")
     math_gen_excerpt = math_excerpt_gen.collect_math_excerpts()
 
 raw_chiang_text = (EXCERPTS_DIR / "raw_chiang_text.md").read_text()

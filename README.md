@@ -56,13 +56,27 @@ Those vectors are then compared using the cosine similarity formula:
 
 This calculates how much the vectors overlap and adjusts for the lengths.
 
-### My Results
+## Installation
 
-|                 | Gemini Output | Math Gen Output | Raw Chiang Text |
-|-----------------|---------------|-----------------|-----------------|
-| Gemini Output   | 1.000         | 0.850           | 0.884           |
-| Math Gen Output | 0.850         | 1.000           | 0.788           |
-| Raw Chiang Text | 0.884         | 0.788           | 1.000           |
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Copy `.env.example` to `.env` and add your API key:
+   ```
+   GOOGLE_API_KEY=your-google-api-key-here
+   ```
+
+## Usage
+
+### Run the Full Pipeline
+
+```bash
+python src/main.py
+```
+
+### My Results
 
 <div align="center">
   <img src="output/similarity_matrix_heatmap.png" width="500">
