@@ -41,6 +41,7 @@ similarity_matrix = similarity.get_similarity_matrix()
 labels = ['Gemini Output', 'Math Gen Output', 'Raw Chiang Text']
 similarity_matrix_df = pd.DataFrame(similarity_matrix, columns=labels, index=labels)
 
+OUTPUT_DIR.mkdir(exist_ok=True)
 similarity_matrix_df.to_excel(OUTPUT_DIR / "similarity_matrix.xlsx", index=True)
 similarity_matrix_df.to_csv(OUTPUT_DIR / "similarity_matrix.csv", index=True)
 
