@@ -78,6 +78,12 @@ python src/main.py
 
 ### My Results
 
+| | Gemini Output | Math Gen Output | Raw Chiang Text |
+|---|---|---|---|
+| **Gemini Output** | 1.0 | 0.884 | 0.909 |
+| **Math Gen Output** | 0.884 | 1.0 | 0.790 |
+| **Raw Chiang Text** | 0.909 | 0.790 | 1.0 |
+
 <div align="center">
   <img src="output/similarity_matrix_heatmap.png" width="500">
 </div>
